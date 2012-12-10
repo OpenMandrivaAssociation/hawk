@@ -1,6 +1,6 @@
 %define name hawk
-%define version 1.0
-%define release %mkrel 2
+%define version 2.1
+%define release 1
 
 Name:           %{name}
 Version:        %{version}
@@ -9,8 +9,9 @@ Summary:        Web-Album generator
 License:        CeCILL
 Group:          Graphics
 URL:            http://tableaux.levier.org/download.html
-Source:         http://tableaux.levier.org/package/%{name}-%{version}.tar.gz
-BuildRoot:      %{_tmppath}/%{name}-%{version}
+Source0:         http://tableaux.levier.org/package/%{name}-%{version}.tar.gz
+source1:				.abf.yml
+buildrequires:	pkgconfig(libpcre)
 
 
 %description
@@ -37,20 +38,17 @@ Yet another Web-Album generator. Highlights:
 
 %prep
 %setup -q
+chmod go+r *
 
 %build
 %make CFLAGS="%optflags"
 
 %install
-rm -rf %buildroot
 install -d -m 755 %buildroot%{_bindir}
 install -d -m 755 %buildroot%{_mandir}/man1
 
 install -m 755 hawk %buildroot%{_bindir}
 install -m 644 hawk.1 %buildroot%{_mandir}/man1
-
-%clean
-rm -rf %buildroot
 
 %files
 %defattr(-, root, root)
@@ -58,3 +56,13 @@ rm -rf %buildroot
 %{_bindir}/hawk
 %{_mandir}/man1/hawk.1*
 
+
+
+%changelog
+* Sun Nov 16 2008 Guillaume Rousse <guillomovitch@mandriva.org> 1.0-1mdv2009.1
++ Revision: 303788
+- import hawk
+
+
+* Sun Nov 16 2008 Guillaume Rousse <guillomovitch@mandriva.org> 1.0-1mdv2009.1
+- first mdv release 
