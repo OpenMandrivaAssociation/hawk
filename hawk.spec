@@ -1,6 +1,6 @@
 %define name hawk
 %define version 2.1
-%define release 1
+%define release 2
 
 Name:           %{name}
 Version:        %{version}
