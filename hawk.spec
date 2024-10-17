@@ -8,7 +8,7 @@ Release:        %{release}
 Summary:        Web-Album generator
 License:        CeCILL
 Group:          Graphics
-URL:            http://tableaux.levier.org/download.html
+URL:            https://tableaux.levier.org/download.html
 Source0:         http://tableaux.levier.org/package/%{name}-%{version}.tar.gz
 source1:				.abf.yml
 buildrequires:	pkgconfig(libpcre)
