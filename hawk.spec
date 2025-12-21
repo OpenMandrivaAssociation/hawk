@@ -11,6 +11,7 @@ Group:          Graphics
 URL:            https://tableaux.levier.org/download.html
 Source0:         http://tableaux.levier.org/package/%{name}-%{version}.tar.gz
 source1:				.abf.yml
+BuildRequires:	make
 buildrequires:	pkgconfig(libpcre)
 
 
